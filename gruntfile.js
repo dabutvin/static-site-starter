@@ -52,6 +52,12 @@ module.exports = function(grunt) {
             cwd: 'src',
             src: ['favicon.ico', 'images/**'],
             dest: 'dist'
+          },
+          {
+            expand: true,
+            cwd: 'node_modules',
+            src: ['bootstrap/dist/**', 'jquery/dist/**'],
+            dest: 'dist/lib/'
           }
         ]
       }
