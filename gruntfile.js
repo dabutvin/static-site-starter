@@ -1,4 +1,5 @@
 module.exports = function(grunt) {
+  grunt.loadNpmTasks('grunt-contrib-clean')
   grunt.loadNpmTasks('grunt-markdown')
   grunt.loadNpmTasks('grunt-contrib-less')
   grunt.loadNpmTasks('grunt-contrib-cssmin')
@@ -7,6 +8,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch')
 
   grunt.initConfig({
+    clean: ['./dist'],
     markdown: {
       all: {
         files: [
@@ -80,5 +82,11 @@ module.exports = function(grunt) {
     }
   })
 
-  grunt.registerTask('gen', ['markdown:all', 'less:all', 'cssmin', 'copy'])
+  grunt.registerTask('gen', [
+    'clean',
+    'markdown:all',
+    'less:all',
+    'cssmin',
+    'copy'
+  ])
 }
