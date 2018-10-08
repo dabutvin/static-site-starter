@@ -6,6 +6,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy')
   grunt.loadNpmTasks('grunt-devserver')
   grunt.loadNpmTasks('grunt-contrib-watch')
+  grunt.loadTasks('./tasks')
 
   grunt.initConfig({
     clean: ['./dist'],
@@ -87,6 +88,7 @@ module.exports = function(grunt) {
     'markdown:all',
     'less:all',
     'cssmin',
-    'copy'
+    'copy',
+    'rename'
   ])
 }
